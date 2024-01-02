@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import ProfileNavButton from '../ProfileNavButton/ProfileNavButton.vue'
+
 type View = {
   noun: string
   path: string,
@@ -19,6 +21,6 @@ const views:Array<View> = [
     </template>
 
     <div class="flex-grow"></div>
-    <cn-navigation-icon noun="gamepad" label="me"></cn-navigation-icon>
+    <ProfileNavButton />
   </nav>
 </template>
