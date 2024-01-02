@@ -5,3 +5,4 @@ import '@11thdeg/cyan-next/dist/style.css'
 import '@11thdeg/cyan-next'
 
 createApp(App).mount('#app')
+document.body.classList.add('light')
