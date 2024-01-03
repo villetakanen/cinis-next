@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import { useFirebaseSession } from '../../plugins/firebaseSession'
+import { useIsCurrentUserLoaded, useCurrentUser } from 'vuefire'
 
-const { active, uid } = useFirebaseSession()
+const active = useIsCurrentUserLoaded()
+const user = useCurrentUser()
 </script>
 
 <template>
-  {{ active }} : {{ uid }}
   <template v-if="active">
-    <template v-if="uid">
+    <template v-if="user">
       <slot />
     </template>
     <template v-else>

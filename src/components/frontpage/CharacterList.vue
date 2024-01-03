@@ -1,8 +1,6 @@
 <script lang="ts" setup>
-import { Ref, onMounted, ref } from 'vue';
+/*import { Ref, onMounted, ref } from 'vue';
 import { Character } from '../../models/character'
-import { useFirebaseSession } from '../../plugins/firebaseSession'
-const { db } = useFirebaseSession()
 import { z } from 'zod'
 import { getDocs, query, collection } from 'firebase/firestore'
 
@@ -23,11 +21,11 @@ onMounted(async () => {
       chars.value.push(c)
     }
   })
-})
+})*/
 </script>
 
 <template>
-  <p v-for="char in chars" :key="char.key">
+  <!--p v-for="char in chars" :key="char.key">
     {{ char.title }}
-  </p>
+  </p-->
 </template>

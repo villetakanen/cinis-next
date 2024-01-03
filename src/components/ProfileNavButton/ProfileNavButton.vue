@@ -1,34 +1,22 @@
 <script lang="ts" setup>
+import { useIsCurrentUserLoaded, useCurrentUser } from 'vuefire'
+const active = useIsCurrentUserLoaded()
+const user = useCurrentUser()
+
 import { computed } from 'vue';
-import { useSessionStore } from '../../state/useSessionStore'
-
-const { active } = useSessionStore()
-
 const link = computed(() => {
-  return active.value ? '/profile' : '/login'
+  return user.value ? '/profile' : '/login'
 })
 const noun = computed(() => {
-  return active.value ? 'gamepad' : 'tokens'
+  return user.value ? 'gamepad' : 'tokens'
 })
 const label = computed(() => {
-  return active.value ? 'me' : 'login'
+  return user.value ? 'me' : 'login'
 })
-
-function dummyLogin () {
-  console.log('dummy login clicked')
-  if (active.value) {
-    console.log('dummy logout')
-    useSessionStore().logout()
-  } else {
-    console.log('dummy login')
-    useSessionStore().login('aa')
-  }
-}
-
 </script>
 
 <template>
-  <a :href="link" @click.prevent="dummyLogin">
+  <router-link :to="link" v-if="active">
     <cn-navigation-icon :noun="noun" :label="label"></cn-navigation-icon>
-  </a>
+  </router-link>
 </template>
