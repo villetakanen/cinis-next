@@ -8,7 +8,7 @@ const link = computed(() => {
   return active.value ? '/profile' : '/login'
 })
 const noun = computed(() => {
-  return active.value ? 'gamepad' : 'token'
+  return active.value ? 'gamepad' : 'tokens'
 })
 const label = computed(() => {
   return active.value ? 'me' : 'login'

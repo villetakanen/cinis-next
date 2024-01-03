@@ -1,16 +1,17 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { getAuth } from "firebase/auth"
-import { getApp } from "firebase/app"
+import { useFirebaseSession } from '../../plugins/firebaseSession'
+import { useSessionStore } from '../../state/useSessionStore'
 
-const auth = getAuth()
-const app = getApp()
+const { auth } = useFirebaseSession()
+const { uid } = useSessionStore()
 
 const user = computed(() => auth.currentUser)
 </script>
 
 <template>
   <h1>Debug</h1>
-  <pre>[{{ app }}]</pre>
-  <pre>[{{ user }}]</pre>
+  <pre>uid: [{{ uid }}]</pre>
+  <pre>auth: [{{ auth }}]</pre>
+  <pre>user: [{{ user }}]</pre>
 </template>

@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HelloWorld from '../components/HelloWorld.vue';
+import Frontpage from './frontpage.vue';
 
 export const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', component: HelloWorld },
+    { path: '/', component: Frontpage },
     { path: '/debug', component: () => import('./debug/debugView.vue')}
   ]
 });

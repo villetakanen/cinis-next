@@ -7,7 +7,7 @@ type View = {
   label?: string
 }
 const views:Array<View> = [
-  { noun: 'd20', path: '/'}
+  { noun: 'letl', path: '/'}
 ]
 
 </script>
