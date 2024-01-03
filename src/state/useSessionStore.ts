@@ -1,7 +1,6 @@
-import { defineStore } from "pinia"
 import { computed, ref } from "vue"
 
-export const useSessionStore = defineStore('session', () => {
+export function useSessionStore () {
   const uid = ref('')
 
   function login (id: string) {
@@ -17,4 +16,4 @@ export const useSessionStore = defineStore('session', () => {
   return { 
     uid: computed(() => uid.value),
     active: computed(() => uid.value !== ''), login, logout }
-})
+}

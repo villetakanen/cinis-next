@@ -1,18 +1,17 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 import { useSessionStore } from '../../state/useSessionStore'
-import { storeToRefs } from 'pinia';
 
-const { active } = storeToRefs(useSessionStore())
+const { active } = useSessionStore()
 
 const link = computed(() => {
-  return active.a ? '/profile' : '/login'
+  return active.value ? '/profile' : '/login'
 })
 const noun = computed(() => {
-  return active ? 'gamepad' : 'token'
+  return active.value ? 'gamepad' : 'token'
 })
 const label = computed(() => {
-  return active ? 'me' : 'login'
+  return active.value ? 'me' : 'login'
 })
 
 function dummyLogin () {

@@ -21,6 +21,9 @@ const views:Array<View> = [
     </template>
 
     <div class="flex-grow"></div>
+    <router-link to="/debug">
+      <cn-navigation-icon noun="monsters" label="debug"></cn-navigation-icon>
+    </router-link>
     <ProfileNavButton />
   </nav>
 </template>
