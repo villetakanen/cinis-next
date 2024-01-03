@@ -1,4 +1,4 @@
-import { getAnalytics, logEvent as logAnalyticsEvent } from '@firebase/analytics'
+import { getAnalytics, logEvent as logAnalyticsEvent } from 'firebase/analytics'
 
 export function logEvent (source: string, info?:{ [key: string]:unknown }):void {
   // eslint-disable-next-line

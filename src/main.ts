@@ -10,4 +10,6 @@ const app = createApp(App)
 app.use(router)
 app.use(createFirebaseSession())
 app.mount('#app')
-document.body.classList.add('light')
+
+// Force Light Theme
+// document.body.classList.add('light')

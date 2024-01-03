@@ -4,20 +4,22 @@ import { firebaseConfig } from "../firebase.config";
 import { FirebaseApp, initializeApp } from "firebase/app";
 import { Analytics, getAnalytics } from "firebase/analytics";
 import { getAuth, Auth } from "firebase/auth";
+import { Firestore, getFirestore } from "firebase/firestore";
 
 let app:FirebaseApp|undefined = undefined
 let auth:Auth|undefined = undefined
 let analytics:Analytics|undefined = undefined
+let db:Firestore|undefined = undefined
 
 export function createFirebaseSession () {
-  function install (vueApp: App) {
+  function install () {
     logDebug('Installing Firebase Session')
 
     // Initialize Firebase
     app = initializeApp(firebaseConfig);
     analytics = getAnalytics(app);
     auth = getAuth(app);
-    vueApp.config.globalProperties.$auth = auth;
+    db = getFirestore(app);
 
     logDebug('Firebase Session Installed')
   }
@@ -26,14 +28,15 @@ export function createFirebaseSession () {
   }
 }
 
-export function useFirebaseSession ():{ analytics: Analytics, app: FirebaseApp, auth: Auth } {
-  if (!app || !auth || !analytics) {
+export function useFirebaseSession ():{ analytics: Analytics, app: FirebaseApp, auth: Auth, db: Firestore } {
+  if (!app || !auth || !analytics || !db) {
     throw new Error('Firebase Session not initiated, did you forget to call createFirebaseSession()?')
   }
   return {
     analytics,
     app,
     auth,
+    db
   }
 }
   

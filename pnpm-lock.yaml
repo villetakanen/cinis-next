@@ -2,8 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@11thdeg/cyan-next': 1.0.0-alpha.10
-  '@firebase/analytics': ^0.10.0
-  '@firebase/app': ^0.9.25
   '@vitejs/plugin-vue': ^4.5.2
   firebase: ^10.7.1
   typescript: ^5.2.2
@@ -11,14 +9,14 @@ specifiers:
   vue: ^3.3.11
   vue-router: '4'
   vue-tsc: ^1.8.25
+  zod: ^3.22.4
 
 dependencies:
   '@11thdeg/cyan-next': 1.0.0-alpha.10
-  '@firebase/analytics': 0.10.0_@firebase+app@0.9.25
-  '@firebase/app': 0.9.25
   firebase: 10.7.1
   vue: 3.4.3_typescript@5.3.3
   vue-router: 4.2.5_vue@3.4.3
+  zod: 3.22.4
 
 devDependencies:
   '@vitejs/plugin-vue': 4.6.2_vite@5.0.10+vue@3.4.3
@@ -1495,4 +1493,8 @@ packages:
       string-width: 4.2.3
       y18n: 5.0.8
       yargs-parser: 21.1.1
+    dev: false
+
+  /zod/3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: false
